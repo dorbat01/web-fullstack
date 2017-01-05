@@ -11,16 +11,14 @@ function LunchCheckController($scope) {
   $scope.comment = "";
 
   $scope.evaluate = function () {
-    if ($scope.lunchItems === "") {
-      $scope.comment = "Please enter data first";
-    } else {
       var items = $scope.splitItems($scope.lunchItems);
-      if (items.length > 3) {
+      if (items.length === 0) {
+        $scope.comment = "Please enter data first";
+      } else if (items.length > 3) {
         $scope.comment = "Too much!";
       } else {
         $scope.comment = "Enjoy!";
       }
-    }
   }
 
   $scope.splitItems = function () {
