@@ -68,7 +68,9 @@ function ShoppingListCheckOffServiceProvider() {
     items : [
               {name: "cookies", quantity: 10},
               {name: "apples", quantity: 6},
-              {name: "ice-cream", quantity: 2}
+              {name: "ice-cream", quantity: 2},
+              {name: "cake", quantity: 5},
+              {name: "cheese", quantity: 1}
             ]
   };
 
