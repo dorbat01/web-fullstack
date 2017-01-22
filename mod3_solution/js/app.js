@@ -12,11 +12,17 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var menu = this;
   menu.term = "";
+  menu.invalidSearch = false;
 
   menu.searchItems = function () {
     var searchTerm = menu.term;
-    menu.found = MenuSearchService.getMatchedMenuItems(searchTerm);
-    console.log(menu.found);
+    if (searchTerm === undefined || searchTerm.trim() === "") {
+      menu.invalidSearch = true;
+      menu.found = [];
+    } else {
+      menu.found = MenuSearchService.getMatchedMenuItems(searchTerm);
+      console.log(menu.found);
+    }
   };
 
   menu.removeItem = function (itemIndex) {
@@ -42,6 +48,20 @@ function FoundItemsDirective() {
 
 function FoundItemsDirectiveController() {
   var list = this;
+
+  list.empty = function () {
+    if (list.found === undefined) {
+      return false;
+    } else if (list.found.length === 0) {
+      return true;
+    }
+
+    return false;
+  };
+
+  list.emptySearchTerm = function () {
+    return list.invalidSearch;
+  };
 
 }
 
