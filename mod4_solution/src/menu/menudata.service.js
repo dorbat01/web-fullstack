@@ -14,9 +14,8 @@ function MenuDataService($q, $http, ApiBasePath) {
   var items = [];
   var categories = [];
 
-  service.getCategoryName = function (params) {
+  service.getCategoryName = function (categoryShortName) {
     var found = "";
-    var categoryShortName = params.itemId;
     for (var i = 0; i < categories.length; i++) {
             console.log(categories[i].short_name, i);
       if (categories[i].short_name.trim() === categoryShortName) {
@@ -64,8 +63,7 @@ function MenuDataService($q, $http, ApiBasePath) {
     return deferred.promise;
   }
 
-  service.getItemsForCategory = function (params) {
-    var categoryShortName = params.itemId;
+  service.getItemsForCategory = function (categoryShortName) {
     var deferred = $q.defer();
     var promise = service.getItems(categoryShortName);
 
