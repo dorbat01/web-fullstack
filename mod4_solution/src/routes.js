@@ -18,7 +18,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     templateUrl: 'src/menu/templates/home.template.html'
   })
 
-  .state('categoryList', {
+  .state('categories', {
     url: '/category-list',
     templateUrl: 'src/menu/templates/main-categorylist.template.html',
     controller: 'MenuController as mainList',
@@ -29,7 +29,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     }
   })
 
-  .state('categoryList.itemDetail', {
+  .state('categories.items', {
     url: '/item-detail/:itemId',
     templateUrl: 'src/menu/templates/menu-detail.template.html',
     controller: 'ItemDetailController as itemDetail',
