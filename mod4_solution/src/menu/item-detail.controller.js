@@ -4,11 +4,10 @@
 angular.module('MenuApp')
 .controller('ItemDetailController', ItemDetailController);
 
-ItemDetailController.$inject = ['$stateParams', 'items', 'categoryName'];
-function ItemDetailController($stateParams, items, categoryName) {
+ItemDetailController.$inject = ['items', 'categoryName'];
+function ItemDetailController(items, categoryName) {
   var itemDetail = this;
   itemDetail.items = items;
-  itemDetail.category = $stateParams.itemId;
   itemDetail.categoryName = categoryName;
 }
 
