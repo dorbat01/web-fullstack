@@ -43,13 +43,13 @@ function routeConfig ($stateProvider) {
     })
     .state('public.signup', {
       url: '/signup',
-      templateUrl: 'src/public/registration/regForm.html',
+      templateUrl: 'src/public/registration/registration-form.html',
       controller: 'RegistrationController',
       controllerAs: 'regCtrl'
     })
     .state('public.myinfo', {
       url: '/myinfo',
-      templateUrl: 'src/public/registration/regInfo.html',
+      templateUrl: 'src/public/member/member-info.html',
       controller: 'MemberController',
       controllerAs: 'mbrCtrl',
       resolve: {
